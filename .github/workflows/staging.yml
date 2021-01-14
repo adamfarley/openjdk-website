@@ -75,7 +75,7 @@ jobs:
         find . -type d -not -name 'dist' -not -name '.git' -maxdepth 1 -mindepth 1 -exec rm -rf {} \;
         # After this bulk-delete, copy across some other necessary files from the master branch:
         cat >"CNAME" <<-EOF
-        staging.releastnotestest.net
+        staging.adoptopenjdk.net
         EOF
         cat >"robots.txt" <<-EOF
         User-agent: *
@@ -119,7 +119,7 @@ jobs:
 
     - uses: mshick/add-pr-comment@v1
       with:
-        message: Now on staging server [here](https://staging.releastnotestest.net/${{ env.PR_NUMBER }}).
+        message: Now on staging server [here](https://staging.adoptopenjdk.net/${{ env.PR_NUMBER }}).
         repo-token: ${{ secrets.ACCESS_TOKEN }}
         repo-token-user-login: 'adoptopenjdk-github-bot'
         allow-repeats: true
